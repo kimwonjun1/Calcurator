@@ -64,7 +64,12 @@ public class App {
                     result = value1 * value2;
                     break;
                 case '/':
-                    result = value1 / value2;
+                    if (value2 != 0) {
+                        result = value1 / value2;
+                    }
+                    else {
+                        System.out.println("0으로는 나눌 수 없습니다.");
+                    }
                     break;
                 default:
                     System.out.println("연산자를 잘못 입력하였습니다.\n +, -, *, / 중에 입력해주세요.");
