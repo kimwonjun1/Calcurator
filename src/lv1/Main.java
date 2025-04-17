@@ -7,22 +7,31 @@ public class Main {
         /* 반복문 사용 해서 연산을 반복 */
         while (true) {
             Scanner sc = new Scanner(System.in);
-            System.out.print("첫 번째 숫자를 입력하세요: ");
-            // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-            int value1 = sc.nextInt();
+            int value1 = 0;
+            int value2 = 0;
 
-            if(value1 < 0) { // 양의 정수(0포함) 조건 확인
-                System.out.println("양의 정수(0 포함)를 입력해주세요.");
-                continue;
+            while(true) {
+                System.out.print("첫 번째 숫자를 입력하세요: ");
+                // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+                value1 = sc.nextInt();
+
+                if (value1 < 0) { // 양의 정수(0포함) 조건 확인
+                    System.out.println("양의 정수(0 포함)를 입력해주세요.");
+                    continue;
+                }
+                break;
             }
 
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-            int value2 = sc.nextInt();
+            while(true) {
+                System.out.print("두 번째 숫자를 입력하세요: ");
+                // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+                value2 = sc.nextInt();
 
-            if(value2 < 0) { // 양의 정수(0포함) 조건 확인
-                System.out.println("양의 정수(0 포함)를 입력해주세요.");
-                continue;
+                if (value2 < 0) { // 양의 정수(0포함) 조건 확인
+                    System.out.println("양의 정수(0 포함)를 입력해주세요.");
+                    continue;
+                }
+                break;
             }
 
             sc.nextLine(); // ← 버퍼에 남은 줄바꿈 제거
