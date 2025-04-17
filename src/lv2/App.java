@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int value1 = 0;
-        int value2 = 0;
+        int value1 = 0; // 첫 번째 입력 정수
+        int value2 = 0; // 두 번째 입력 정수
+        int result = 0; // 연산 결과
+        
         while (true) {
             while (true) {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -46,13 +48,13 @@ public class App {
 
             System.out.print("사칙연산 기호를 입력하세요: ");
 
-            char op = sc.nextLine().charAt(0);
-            int result = 0;
+            char op = sc.nextLine().charAt(0); // 연산자
 
-            Calculator calc = new Calculator(value1, value2, op);
+            Calculator calc = new Calculator(value1, value2, op); // 계산기 객체 생성, 생성자 매캐변수로 숫자2개와 연산자
 
-            result = calc.calculate();
-            System.out.println("연산 결과 : " + result);
+            result = calc.calculate(); // 연산 기능(calculate() 메서드) 사용
+            System.out.println("연산 결과 : " + result); // 연산 결과 출력
+            calc.removeResult(); // 가장 오래된 연산 결과 삭제
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
