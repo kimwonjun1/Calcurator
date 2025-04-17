@@ -8,7 +8,8 @@ public class App {
         int value1 = 0; // 첫 번째 입력 정수
         int value2 = 0; // 두 번째 입력 정수
         int result = 0; // 연산 결과
-        
+        Calculator calc = new Calculator(); // 계산기 객체 생성, 생성자 매캐변수로 숫자2개와 연산자
+
         while (true) {
             while (true) {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -50,10 +51,11 @@ public class App {
 
             char op = sc.nextLine().charAt(0); // 연산자
 
-            Calculator calc = new Calculator(value1, value2, op); // 계산기 객체 생성, 생성자 매캐변수로 숫자2개와 연산자
+            calc.setValues(value1, value2, op); // setter를 활용하여 클래스의 맴버변수를 설정
 
-            result = calc.calculate(); // 연산 기능(calculate() 메서드) 사용
-            System.out.println("연산 결과 : " + result); // 연산 결과 출력
+            calc.calculate(); // 연산 기능(calculate() 메서드) 사용
+
+            //System.out.println("연산 결과 : " + result); // 연산 결과 출력
             calc.removeResult(); // 가장 오래된 연산 결과 삭제
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -61,5 +63,6 @@ public class App {
             String exit = sc.nextLine();
             if(exit.equals("exit")) break;
         }
+        sc.close();
     }
 }
