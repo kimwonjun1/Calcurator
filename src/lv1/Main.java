@@ -46,7 +46,7 @@ public class Main {
                 }
             }
 
-            sc.nextLine(); // ← 버퍼에 남은 줄바꿈 제거
+            // sc.nextLine(); // ← 버퍼에 남은 줄바꿈 제거
             System.out.print("사칙연산 기호를 입력하세요: ");
             // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
             char op = sc.nextLine().charAt(0);
