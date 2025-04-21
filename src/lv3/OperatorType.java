@@ -4,27 +4,27 @@ public enum OperatorType {
     // 고정된 매개변수값("+", "-", "*", "/"을 가지는  PLUS, MINUS, MULTIPLY, DIVIDE 객체 생성
     PLUS("+") {
         @Override
-        public int apply(int value1, int value2) {
+        public double apply(double value1, double value2) {
             return value1 + value2;
         }
     },
     MINUS("-") {
         @Override
-        public int apply(int value1, int value2) {
+        public double apply(double value1, double value2) {
             return value1 - value2;
         }
     },
     MULTIPLY("*") {
         @Override
-        public int apply(int value1, int value2) {
+        public double apply(double value1, double value2) {
             return value1 * value2;
         }
     },
     DIVIDE("/") {
         @Override
-        public int apply(int value1, int value2) {
+        public double apply(double value1, double value2) {
             if (value2 == 0) {
-                throw new ArithmeticException("0으로 나눌 수 없습니다.");
+                throw new ArithmeticException("0으로 나눌 수 없습니다."); // value2가 0일때 throw문을 통해 ArithmeticExceptionthrow객체를 생성하고 에러 발생, main에서 이 에러에 대한 처리
             }
             return value1 / value2;
         }
@@ -57,7 +57,7 @@ public enum OperatorType {
     }
 
     // apply() 추상 메서드 각 객체에 맞게 오버라이드하여 구현, Calculator의 계산 기능을 적용하는 메서드
-    public abstract int apply(int value1, int value2);
+    public abstract double apply(double value1, double value2);
 
     // 모든 PLUS, MINUS, MULTIPLY, DIVIDE 객체가 공유하여 사용하는 메서드
 
