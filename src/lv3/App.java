@@ -1,6 +1,6 @@
 package lv3;
 
-import lv2.Calculator;
+import lv3.ArithmeticCalculator;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class App {
         int value1 = 0; // 첫 번째 입력 정수
         int value2 = 0; // 두 번째 입력 정수
         int result = 0; // 연산 결과
-        Calculator calc = new Calculator(); // 계산기 객체 생성, 생성자 매캐변수로 숫자2개와 연산자
+        ArithmeticCalculator calc = new ArithmeticCalculator(); // 계산기 객체 생성, 생성자 매캐변수로 숫자2개와 연산자
 
         while (true) {
             while (true) {

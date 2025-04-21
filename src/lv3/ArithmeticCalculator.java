@@ -3,7 +3,7 @@ package lv3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class ArithmeticCalculator {
     // 속성
     private int value1;
     private int value2;
