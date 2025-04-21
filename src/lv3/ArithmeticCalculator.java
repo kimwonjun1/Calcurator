@@ -7,7 +7,8 @@ public class ArithmeticCalculator {
     // 속성
     private int value1;
     private int value2;
-    private char op;
+    private String op; // 연산자
+    private int result; // 연산 결과
 
     // ArrayList객체를 List<Integer>형 변수 results에 할당
     private static List<Integer> results = new ArrayList<>(); // 결과들을 저장할 리스트, 크기를 자동으로 변환하기 위해 List사용
@@ -16,58 +17,21 @@ public class ArithmeticCalculator {
 
     /* Getter 메서드 구현 */
 
-    public int getValue1() {
-        return value1;
-    }
-
-    public int getValue2() {
-        return value2;
-    }
-
-    public char getOp() {
-        return op;
-    }
+    public int getResult() { return this.result; } // 연산 결과(calculate() 메서드를 통해 연산 결과가 저장됨) 멤버 변수를 반환
 
     /* Setter 메서드 구현 */
 
-    public void setValues(int value1, int value2, char op) {
+    public void setValues(int value1, int value2, String op) { // 입력받은 value1, value2, op를 멤버변수에 설정
         this.value1 = value1;
         this.value2 = value2;
         this.op = op;
     }
 
     // 기능
-    public boolean calculate() {
-        int result = 0;
-        boolean success = true;
-        switch (op) {
-            case '+':
-                result = this.value1 + this.value2;
-                break;
-            case '-':
-                result = this.value1 - this.value2;
-                break;
-            case '*':
-                result = this.value1 * this.value2;
-                break;
-            case '/':
-                if (value2 != 0) {
-                    result = this.value1 / this.value2;
-                }
-                else {
-                    System.out.println("0으로는 나눌 수 없습니다.");
-                    success = false;
-                }
-                break;
-            default:
-                System.out.println("연산자를 잘못 입력하였습니다.\n +, -, *, / 중에 입력해주세요.");
-                success = false;
-        }
-        if (success) {
-            results.add(result);
-            System.out.println("연산 결과 : " + result);
-        }
-        return success;
+    public void calculate() { // 연산 기능, setter를 통해 설정된 멤버변수(value1, value2, op)를 활용
+        OperatorType operatorType = OperatorType.searchSymbol(this.op);
+        result = operatorType.apply(this.value1, this.value2);
+        results.add(result); // 연산 결과를 results list에 추가
     }
 
     public void removeResult() {
